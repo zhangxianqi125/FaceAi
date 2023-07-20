@@ -1,12 +1,15 @@
-#coding=utf-8
-#数字化妆类
+# coding=utf-8
+# 数字化妆类
 import face_recognition
 from PIL import Image, ImageDraw
 
-#加载图片到numpy array
+# 加载图片到numpy array
+'''
+可以自己拍摄照片，放在img文件夹下，导入方法参考下面这段代码
+'''
 image = face_recognition.load_image_file("img/ag.png")
 
-#标识脸部特征
+# 标识脸部特征
 face_landmarks_list = face_recognition.face_landmarks(image)
 
 for face_landmarks in face_landmarks_list:

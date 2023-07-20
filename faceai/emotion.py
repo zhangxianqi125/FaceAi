@@ -1,5 +1,5 @@
-#coding=utf-8
-#表情识别
+# coding=utf-8
+# 表情识别
 
 import cv2
 from keras.models import load_model
@@ -25,15 +25,16 @@ emotion_labels = {
 
 img = cv2.imread("img/emotion/emotion.png")
 face_classifier = cv2.CascadeClassifier(
-    "C:\Python36\Lib\site-packages\opencv-master\data\haarcascades\haarcascade_frontalface_default.xml"
+    "..\model\haarcascade_frontalface_default.xml"
 )
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
 faces = face_classifier.detectMultiScale(
     gray, scaleFactor=1.2, minNeighbors=3, minSize=(40, 40))
 color = (255, 0, 0)
 
 for (x, y, w, h) in faces:
-    gray_face = gray[(y):(y + h), (x):(x + w)]
+    gray_face = gray[y:(y + h), x:(x + w)]
     gray_face = cv2.resize(gray_face, (48, 48))
     gray_face = gray_face / 255.0
     gray_face = np.expand_dims(gray_face, 0)

@@ -1,12 +1,12 @@
-#coding=utf-8
-#图片着色
+# coding=utf-8
+# 图片着色
 import keras
 # import tensorflow as tf
 from skimage.io import imread, imsave
 from skimage.color import rgb2gray, gray2rgb, rgb2lab, lab2rgb
 from keras.models import Sequential
 from keras.layers import Conv2D, UpSampling2D, InputLayer, Conv2DTranspose
-from keras.preprocessing.image import img_to_array, load_img
+from keras_preprocessing.image import img_to_array, load_img
 import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 import os
@@ -45,7 +45,7 @@ def build_model():
     return model
 
 
-#训练数据
+# 训练数据
 def train():
     x, y, img_shape = get_train_data('./img/colorize/colorize-original.png')
 
@@ -53,7 +53,7 @@ def train():
     #     './img/colorize/colorize2-original.png')
 
     model = build_model()
-    num_epochs = 1000  #训练次数
+    num_epochs = 1000  # 训练次数
     batch_size = 1
 
     model.fit(x, y, batch_size=batch_size, epochs=num_epochs)
@@ -61,7 +61,7 @@ def train():
     model.save('./data/simple_colorize.h5')
 
 
-#着色
+# 着色
 def colorize():
     path = './img/colorize/colorize2.png'
     # cv2.imwrite('./img/colorize3.png', cv2.imread(path, 0))

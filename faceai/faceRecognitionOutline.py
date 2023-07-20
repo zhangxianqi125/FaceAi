@@ -1,12 +1,16 @@
-#coding=utf-8
-#绘制面部轮廓
+# coding=utf-8
+# 绘制面部轮廓
 import face_recognition
 from PIL import Image, ImageDraw
+
+'''
+可以自己拍摄照片，放在img文件夹下，导入方法参考下面这段代码
+'''
 
 # 将图片文件加载到numpy 数组中
 image = face_recognition.load_image_file("img/ag.png")
 
-#查找图像中所有面部的所有面部特征
+# 查找图像中所有面部的所有面部特征
 face_landmarks_list = face_recognition.face_landmarks(image)
 
 for face_landmarks in face_landmarks_list:

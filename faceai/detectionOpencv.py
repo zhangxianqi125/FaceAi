@@ -7,7 +7,7 @@ import time
 filepath = "img/xingye-1.png"
 # OpenCV人脸识别分类器
 classifier = cv2.CascadeClassifier(
-    "C:\Python36\Lib\site-packages\opencv-master\data\haarcascades\haarcascade_frontalface_default.xml"
+    "..\model\haarcascade_frontalface_default.xml"
 )
 
 # 程序开始时间
@@ -39,4 +39,5 @@ endTime = datetime.datetime.now()
 print((endTime - startTime))
 cv2.imshow("image", img)  # 显示图像
 cv2.waitKey(0)
+
 cv2.destroyAllWindows()

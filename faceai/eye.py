@@ -83,7 +83,7 @@ def hist(img):
 
 
 classifier = cv2.CascadeClassifier(
-    "C:\Python36\Lib\site-packages\opencv-master\data\haarcascades\haarcascade_eye.xml"  #haarcascade_eye_tree_eyeglasses
+    "..\model\haarcascade_eye.xml"  #haarcascade_eye_tree_eyeglasses
 )
 
 

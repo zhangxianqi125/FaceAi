@@ -1,5 +1,5 @@
-#coding=utf-8
-#人脸识别类 - 使用face_recognition模块
+# coding=utf-8
+# 人脸识别类 - 使用face_recognition模块
 import cv2
 import face_recognition
 import os
@@ -8,13 +8,13 @@ path = "img/face_recognition"  # 模型数据图片目录
 cap = cv2.VideoCapture(0)
 total_image_name = []
 total_face_encoding = []
-for fn in os.listdir(path):  #fn 表示的是文件名q
+for fn in os.listdir(path):  # fn 表示的是文件名q
     print(path + "/" + fn)
     total_face_encoding.append(
         face_recognition.face_encodings(
             face_recognition.load_image_file(path + "/" + fn))[0])
-    fn = fn[:(len(fn) - 4)]  #截取图片名（这里应该把images文件中的图片名命名为为人物名）
-    total_image_name.append(fn)  #图片名字列表
+    fn = fn[:(len(fn) - 4)]  # 截取图片名（这里应该把images文件中的图片名命名为为人物名）
+    total_image_name.append(fn)  # 图片名字列表
 while (1):
     ret, frame = cap.read()
     # 发现在视频帧所有的脸和face_enqcodings

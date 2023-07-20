@@ -1,14 +1,14 @@
 #coding=utf-8
 #性别识别
 
-import cv2
+import opencv as cv2
 from keras.models import load_model
 import numpy as np
 import chineseText
 
 img = cv2.imread("img/gather.png")
 face_classifier = cv2.CascadeClassifier(
-    "C:\Python36\Lib\site-packages\opencv-master\data\haarcascades\haarcascade_frontalface_default.xml"
+    "..\model\haarcascade_frontalface_default.xml"
 )
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 faces = face_classifier.detectMultiScale(

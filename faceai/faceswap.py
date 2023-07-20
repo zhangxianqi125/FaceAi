@@ -3,7 +3,7 @@ import cv2
 import numpy
 import dlib
 
-modelPath = "C:\Python36\Lib\site-packages\dlib-data\shape_predictor_68_face_landmarks.dat"
+modelPath = "..\model\shape_predictor_68_face_landmarks.dat"
 SCALE_FACTOR = 1
 FEATHER_AMOUNT = 11
 

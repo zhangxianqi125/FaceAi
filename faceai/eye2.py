@@ -4,16 +4,16 @@ import numpy as np
 import time
 
 classifier = cv2.CascadeClassifier(
-    "C:\Python36\Lib\site-packages\opencv-master\data\haarcascades\haarcascade_eye_tree_eyeglasses.xml"  # haarcascade_eye
+    "..\model\haarcascade_eye_tree_eyeglasses.xml"  # haarcascade_eye
 )
 
 
-#彩色直方图均衡化
+# 彩色直方图均衡化
 def hist(img):
     ycrcb = cv2.cvtColor(img, cv2.COLOR_BGR2YCR_CB)
     channels = cv2.split(ycrcb)
-    cv2.equalizeHist(channels[0], channels[0])  #输入通道、输出通道矩阵
-    cv2.merge(channels, ycrcb)  #合并结果通道
+    cv2.equalizeHist(channels[0], channels[0])  # 输入通道、输出通道矩阵
+    cv2.merge(channels, ycrcb)  # 合并结果通道
     cv2.cvtColor(ycrcb, cv2.COLOR_YCR_CB2BGR, img)
     return img
 
